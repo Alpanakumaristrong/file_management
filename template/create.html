@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create_file</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label>OEM</label>
+            <input type="text" name="OEM"><br>
+            <label>Hardware_Type</label>
+            <input type="text" name="Hardware_Type"><br>
+            <label>Equipment_description</label>
+            <input type="text" name="Equipment_description"><br>
+            <label>Supported_Cards</label>
+            <input type="text" name="Supported_Cards"><br>
+            <label>Technology_Supported</label>
+            <input type="text" name="Technology_Supported"><br>
+            <label>Techninal_Description</label>
+            <input type="text" name="Techninal_Description"><br>
+            <label>Capacity</label>
+            <input type="text" name="Capacity"><br>
+            <label>MAX_POWER</label>
+            <input type="text" name="MAX_POWER"><br>
+            <label>Remarks</label>
+            <input type="text" name="Remarks"><br>
+        </div>
+        <button type="submit" >submit</button>
+
+    </form>
+</body>
+</html>

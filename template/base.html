@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit">Create</button>
+    </form> 
+
+    <a href="{% url 'upload_file' %}"><button>Add List</button></a>
+    <!-- <a href="{% url 'create' %}"><button>Create</button></a> -->
+    
+<div style="text-align: center;width: 20px;padding: 72px;">
+  <table >
+   <thead>
+    <th>s/n</th>
+    <th>OEM</th>
+    <th>Hardware_Type</th>
+    <th>Equipment_description</th>
+    <th>Supported_Cards</th>
+    <th>Technology_Supported</th>
+    <th>Techninal_Description</th>
+    <th>Capacity</th>
+    <th>MAX_POWER</th>
+    <th>Remarks</th>
+    <th>Action</th>
+
+
+  </thead>  
+  <tbody>
+    {% for i in objs %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.OEM}}</td>
+        <td>{{i.Hardware_Type}}</td>
+        <td>{{i.Equipment_description}}</td>
+        <td>{{i.Supported_Cards}}</td>
+        <td>{{i.Technology_Supported}}</td>
+        <td>{{i.Techninal_Description}}</td>
+        <td>{{i.Capacity}}</td>
+        <td>{{i.MAX_POWER}}</td>
+        <td>{{i.Remarks}}</td>
+        <td>
+            
+            
+            
+        <form action="{% url 'delete' i.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>   
+        <form action="{% url 'edit' i.id %}" method="'post">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+        </td>
+        
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>   
+</body>
+</html>

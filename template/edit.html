@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+    <form method="post"  action="{% url 'edit' edit_data.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <div>
+        <label>OEM</label>
+        <input type="text" name="OEM" value="{{edit_data.OEM}}"><br>
+        <label>Hardware_Type</label>
+        <input type="text" name="Hardware_Type" value="{{edit_data.Hardware_Type}}"><br>
+        <label>Equipment_description</label>
+        <input type="text" name="Equipment_description" value="{{edit_data.Equipment_description}}"><br>
+        <label>Supported_Cards</label>
+        <input type="text" name="Supported_Cards" value="{{edit_data.Supported_Cards}}"><br>
+        <label>Technology_Supported</label>
+        <input type="text" name="Technology_Supported" value="{{edit_data.Technology_Supported}}"><br>
+        <label>Techninal_Description</label>
+        <input type="text" name="Techninal_Description" value="{{edit_data.Techninal_Description}}"><br>
+        <label>Capacity</label>
+        <input type="text" name="Capacity" value="{{edit_data.Capacity}}"><br>
+        <label>MAX_POWER</label>
+        <input type="text" name="MAX_POWER" value="{{edit_data.MAX_POWER}}"><br>
+        <label>Remarks</label>
+        <input type="text" name="Remarks" value="{{edit_data.Remarks}}"><br>
+    </div>
+    <button type="submit" >submit</button>
+    </form>
+    
+</body>
+</html>
+
+
+   
+
+
+  
